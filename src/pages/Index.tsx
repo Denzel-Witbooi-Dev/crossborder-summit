@@ -1,6 +1,7 @@
 
 import { MapPin, Calendar, Clock } from "lucide-react";
 import CountdownTimer from "@/components/CountdownTimer";
+import ConferenceProgram from "@/components/ConferenceProgram";
 
 const Index = () => {
   // Set conference date: June 26, 2025
@@ -21,7 +22,7 @@ const Index = () => {
       
       {/* Main Content */}
       <main className="container mx-auto flex-grow px-4 py-8 md:py-12">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           {/* Conference Title */}
           <div className="text-center mb-8 md:mb-12 animate-fade-in">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white font-heading mb-4">
@@ -32,7 +33,7 @@ const Index = () => {
             <div className="flex flex-col md:flex-row justify-center items-center gap-4 text-white mb-6">
               <div className="flex items-center gap-2">
                 <Calendar className="h-5 w-5 text-cbrta-gold" />
-                <span>June 26, 2025</span>
+                <span>June 26-27, 2025</span>
               </div>
               <div className="hidden md:block text-cbrta-gold">•</div>
               <div className="flex items-center gap-2">
@@ -57,7 +58,7 @@ const Index = () => {
           </div>
           
           {/* Countdown Timer */}
-          <div className="mb-8 animate-fade-in" style={{animationDelay: "0.2s"}}>
+          <div className="mb-12 animate-fade-in" style={{animationDelay: "0.2s"}}>
             <CountdownTimer targetDate={conferenceDate} />
           </div>
           
@@ -71,15 +72,20 @@ const Index = () => {
             </button>
           </div>
           
+          {/* Conference Program */}
+          <section className="mb-12 animate-fade-in" style={{animationDelay: "0.3s"}}>
+            <ConferenceProgram />
+          </section>
+          
           {/* Venue Details */}
-          <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-6 mb-8 border border-white border-opacity-20 animate-fade-in" style={{animationDelay: "0.3s"}}>
+          <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-6 mb-8 border border-white border-opacity-20 animate-fade-in" style={{animationDelay: "0.4s"}}>
             <h3 className="text-xl font-heading font-semibold text-cbrta-gold mb-3">Venue</h3>
             <p className="text-white mb-2 font-medium">Coega Vulindlela Accommodation and Conference Centre (VACC)</p>
             <p className="text-white/80">Gqeberha, Eastern Cape, South Africa</p>
           </div>
           
           {/* Conference Description */}
-          <div className="space-y-6 text-white/90 animate-fade-in" style={{animationDelay: "0.4s"}}>
+          <div className="space-y-6 text-white/90 animate-fade-in" style={{animationDelay: "0.5s"}}>
             <p>
               The Cross-Border Road Transport Agency (C-BRTA) is proud to host this conference aimed at fostering collaboration 
               and innovation among industry players, policymakers, and stakeholders in the cross-border transport sector.
@@ -91,7 +97,7 @@ const Index = () => {
             </p>
             
             <p>
-              Through insightful discussions, case studies, workshops, and networking opportunities, participants will gain 
+              Through insightful discussions, case studies, workshops, and networking opportunities, the conference will provide 
               a comprehensive understanding of how MSMEs can adapt to evolving market demands, enhance operational efficiency, 
               and navigate the complexities of cross-border trade.
             </p>
