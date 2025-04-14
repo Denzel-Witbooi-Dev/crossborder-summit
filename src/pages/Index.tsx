@@ -2,10 +2,14 @@
 import { MapPin, Calendar, Clock } from "lucide-react";
 import CountdownTimer from "@/components/CountdownTimer";
 import ConferenceProgram from "@/components/ConferenceProgram";
+import KeySpeakers from "@/components/KeySpeakers";
+import Sponsors from "@/components/Sponsors";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Index = () => {
   // Set conference date: June 26, 2025
   const conferenceDate = new Date("2025-06-26T09:00:00+02:00");
+  const isMobile = useIsMobile();
   
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-cbrta-blue to-cbrta-darkgray">
@@ -72,9 +76,19 @@ const Index = () => {
             </button>
           </div>
           
+          {/* Key Speakers */}
+          <section className="mb-12 animate-fade-in" style={{animationDelay: "0.28s"}}>
+            <KeySpeakers />
+          </section>
+          
           {/* Conference Program */}
           <section className="mb-12 animate-fade-in" style={{animationDelay: "0.3s"}}>
             <ConferenceProgram />
+          </section>
+          
+          {/* Sponsors */}
+          <section className="mb-12 animate-fade-in" style={{animationDelay: "0.33s"}}>
+            <Sponsors />
           </section>
           
           {/* Venue Details */}
