@@ -153,11 +153,16 @@ const SponsorCard = ({
         hover:shadow-md transition-all hover:scale-105
       `}
     >
-      <div className="flex-1 flex items-center justify-center w-full">
+      <div className="flex-1 flex items-center justify-center w-full p-2">
         <img 
           src={sponsor.logoUrl} 
           alt={`${sponsor.name} logo`} 
-          className="max-w-full max-h-full object-contain"
+          className="max-w-full max-h-full object-contain" 
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.src = '/placeholder.svg';
+            target.onerror = null;
+          }}
         />
       </div>
       <div className="text-center">
@@ -175,3 +180,4 @@ const SponsorCard = ({
 };
 
 export default Sponsors;
+
