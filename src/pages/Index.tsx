@@ -16,21 +16,19 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-cbrta-blue to-cbrta-darkgray">
       {/* Header with Logo and Navigation */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-cbrta-blue">
-        <div className="container mx-auto pt-6 px-4">
-          <div className="flex justify-between items-center pb-6">
-            <img 
-              src="/lovable-uploads/cd69fd35-2767-47fc-a3f6-3a011e3b3975.png" 
-              alt="C-BRTA Logo" 
-              className="h-16 md:h-20 w-auto"
-            />
-            <Navigation />
-          </div>
+      <header className="container mx-auto pt-6 px-4">
+        <div className="flex justify-between items-center">
+          <img 
+            src="/lovable-uploads/cd69fd35-2767-47fc-a3f6-3a011e3b3975.png" 
+            alt="C-BRTA Logo" 
+            className="h-16 md:h-20 w-auto"
+          />
+          <Navigation />
         </div>
       </header>
       
-      {/* Main Content with padding to account for fixed header */}
-      <main className="container mx-auto flex-grow px-4 py-8 md:py-12 mt-32">
+      {/* Main Content */}
+      <main className="container mx-auto flex-grow px-4 py-8 md:py-12">
         <div className="max-w-5xl mx-auto">
           {/* Conference Title */}
           <div className="text-center mb-8 md:mb-12 animate-fade-in">
@@ -80,13 +78,7 @@ const Index = () => {
               Register Interest
             </button>
           </div>
-          {/* Venue Details */}
-          <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-6 mb-8 border border-white border-opacity-20 animate-fade-in" style={{animationDelay: "0.4s"}}>
-            <h3 className="text-xl font-heading font-semibold text-cbrta-gold mb-3">Venue</h3>
-            <p className="text-white mb-2 font-medium">Coega Vulindlela Accommodation and Conference Centre (VACC)</p>
-            <p className="text-white/80">Gqeberha, Eastern Cape, South Africa</p>
-          </div>
-
+          
           {/* About Section */}
           <div id="about" className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-6 mb-12 border border-white border-opacity-20 animate-fade-in">
             <h2 className="text-2xl font-heading font-bold text-cbrta-gold mb-6">About the Conference</h2>
@@ -127,10 +119,10 @@ const Index = () => {
               </p>
             </div>
           </div>
-
-          {/* Prospectus */}
-          <section id="prospectus" className="mb-12 animate-fade-in" style={{animationDelay: "0.32s"}}>
-            <Prospectus />
+          
+          {/* Key Speakers */}
+          <section id="speakers" className="mb-12 animate-fade-in" style={{animationDelay: "0.28s"}}>
+            <KeySpeakers />
           </section>
           
           {/* Conference Program */}
@@ -138,11 +130,10 @@ const Index = () => {
             <ConferenceProgram />
           </section>
           
-          {/* Key Speakers */}
-          <section id="speakers" className="mb-12 animate-fade-in" style={{animationDelay: "0.28s"}}>
-            <KeySpeakers />
+          {/* Prospectus */}
+          <section id="prospectus" className="mb-12 animate-fade-in" style={{animationDelay: "0.32s"}}>
+            <Prospectus />
           </section>
-
           
           {/* Exhibitors */}
           <section id="exhibitors" className="mb-12 animate-fade-in" style={{animationDelay: "0.34s"}}>
@@ -159,7 +150,12 @@ const Index = () => {
             <Sponsors />
           </section>
           
- 
+          {/* Venue Details */}
+          <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-6 mb-8 border border-white border-opacity-20 animate-fade-in" style={{animationDelay: "0.4s"}}>
+            <h3 className="text-xl font-heading font-semibold text-cbrta-gold mb-3">Venue</h3>
+            <p className="text-white mb-2 font-medium">Coega Vulindlela Accommodation and Conference Centre (VACC)</p>
+            <p className="text-white/80">Gqeberha, Eastern Cape, South Africa</p>
+          </div>
         </div>
       </main>
       
