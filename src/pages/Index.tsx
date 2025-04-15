@@ -16,19 +16,21 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-cbrta-blue to-cbrta-darkgray">
       {/* Header with Logo and Navigation */}
-      <header className="container mx-auto pt-6 px-4">
-        <div className="flex justify-between items-center">
-          <img 
-            src="/lovable-uploads/cd69fd35-2767-47fc-a3f6-3a011e3b3975.png" 
-            alt="C-BRTA Logo" 
-            className="h-16 md:h-20 w-auto"
-          />
-          <Navigation />
+      <header className="fixed top-0 left-0 right-0 z-50 bg-cbrta-blue">
+        <div className="container mx-auto pt-6 px-4">
+          <div className="flex justify-between items-center pb-6">
+            <img 
+              src="/lovable-uploads/cd69fd35-2767-47fc-a3f6-3a011e3b3975.png" 
+              alt="C-BRTA Logo" 
+              className="h-16 md:h-20 w-auto"
+            />
+            <Navigation />
+          </div>
         </div>
       </header>
       
-      {/* Main Content */}
-      <main className="container mx-auto flex-grow px-4 py-8 md:py-12">
+      {/* Main Content with padding to account for fixed header */}
+      <main className="container mx-auto flex-grow px-4 py-8 md:py-12 mt-32">
         <div className="max-w-5xl mx-auto">
           {/* Conference Title */}
           <div className="text-center mb-8 md:mb-12 animate-fade-in">
