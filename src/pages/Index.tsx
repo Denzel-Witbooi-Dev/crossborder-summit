@@ -70,36 +70,21 @@ const Index = () => {
           <div className="text-center mb-12 animate-fade-in" style={{animationDelay: "0.25s"}}>
             <button 
               className="bg-cbrta-gold hover:bg-opacity-90 text-cbrta-darkgray font-bold py-3 px-8 rounded-full shadow-lg transform transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-cbrta-gold focus:ring-opacity-50"
-              onClick={() => alert("Registration will open soon. Thank you for your interest!")}
+              onClick={() => alert("RSVP will open soon. Thank you for your interest!")}
             >
-              Register Interest
+              RSVP Here
             </button>
           </div>
-          
-          {/* Key Speakers */}
-          <section className="mb-12 animate-fade-in" style={{animationDelay: "0.28s"}}>
-            <KeySpeakers />
-          </section>
-          
-          {/* Conference Program */}
-          <section className="mb-12 animate-fade-in" style={{animationDelay: "0.3s"}}>
-            <ConferenceProgram />
-          </section>
-          
-          {/* Sponsors */}
-          <section className="mb-12 animate-fade-in" style={{animationDelay: "0.33s"}}>
-            <Sponsors />
-          </section>
-          
-          {/* Venue Details */}
-          <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-6 mb-8 border border-white border-opacity-20 animate-fade-in" style={{animationDelay: "0.4s"}}>
+
+                    {/* Venue Details */}
+                    <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-6 mb-8 border border-white border-opacity-20 animate-fade-in" style={{animationDelay: "0.4s"}}>
             <h3 className="text-xl font-heading font-semibold text-cbrta-gold mb-3">Venue</h3>
             <p className="text-white mb-2 font-medium">Coega Vulindlela Accommodation and Conference Centre (VACC)</p>
             <p className="text-white/80">Gqeberha, Eastern Cape, South Africa</p>
           </div>
           
-          {/* Conference Description */}
-          <div className="space-y-6 text-white/90 animate-fade-in" style={{animationDelay: "0.5s"}}>
+                    {/* Conference Description */}
+                    <div className="space-y-6 text-white/90 animate-fade-in" style={{animationDelay: "0.5s"}}>
             <p>
               The Cross-Border Road Transport Agency (C-BRTA) is proud to host this conference aimed at fostering collaboration 
               and innovation among industry players, policymakers, and stakeholders in the cross-border transport sector.
@@ -124,6 +109,25 @@ const Index = () => {
           </div>
         </div>
       </main>
+
+          {/* Key Speakers */}
+          <section className="mb-12 animate-fade-in" style={{animationDelay: "0.28s"}}>
+            <KeySpeakers />
+          </section>
+          
+          {/* Conference Program */}
+          <section className="mb-12 animate-fade-in" style={{animationDelay: "0.3s"}}>
+            <ConferenceProgram />
+          </section>
+          
+          {/* Sponsors */}
+          {/* <section className="mb-12 animate-fade-in" style={{animationDelay: "0.33s"}}>
+            <Sponsors />
+          </section> */}
+          
+
+          
+
       
       {/* Footer */}
       <footer className="bg-cbrta-darkgray py-6">
