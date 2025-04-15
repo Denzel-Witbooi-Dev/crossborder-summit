@@ -78,7 +78,13 @@ const Index = () => {
               Register Interest
             </button>
           </div>
-          
+          {/* Venue Details */}
+          <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-6 mb-8 border border-white border-opacity-20 animate-fade-in" style={{animationDelay: "0.4s"}}>
+            <h3 className="text-xl font-heading font-semibold text-cbrta-gold mb-3">Venue</h3>
+            <p className="text-white mb-2 font-medium">Coega Vulindlela Accommodation and Conference Centre (VACC)</p>
+            <p className="text-white/80">Gqeberha, Eastern Cape, South Africa</p>
+          </div>
+
           {/* About Section */}
           <div id="about" className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-6 mb-12 border border-white border-opacity-20 animate-fade-in">
             <h2 className="text-2xl font-heading font-bold text-cbrta-gold mb-6">About the Conference</h2>
@@ -119,10 +125,10 @@ const Index = () => {
               </p>
             </div>
           </div>
-          
-          {/* Key Speakers */}
-          <section id="speakers" className="mb-12 animate-fade-in" style={{animationDelay: "0.28s"}}>
-            <KeySpeakers />
+
+          {/* Prospectus */}
+          <section id="prospectus" className="mb-12 animate-fade-in" style={{animationDelay: "0.32s"}}>
+            <Prospectus />
           </section>
           
           {/* Conference Program */}
@@ -130,10 +136,11 @@ const Index = () => {
             <ConferenceProgram />
           </section>
           
-          {/* Prospectus */}
-          <section id="prospectus" className="mb-12 animate-fade-in" style={{animationDelay: "0.32s"}}>
-            <Prospectus />
+          {/* Key Speakers */}
+          <section id="speakers" className="mb-12 animate-fade-in" style={{animationDelay: "0.28s"}}>
+            <KeySpeakers />
           </section>
+
           
           {/* Exhibitors */}
           <section id="exhibitors" className="mb-12 animate-fade-in" style={{animationDelay: "0.34s"}}>
@@ -150,12 +157,7 @@ const Index = () => {
             <Sponsors />
           </section>
           
-          {/* Venue Details */}
-          <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-6 mb-8 border border-white border-opacity-20 animate-fade-in" style={{animationDelay: "0.4s"}}>
-            <h3 className="text-xl font-heading font-semibold text-cbrta-gold mb-3">Venue</h3>
-            <p className="text-white mb-2 font-medium">Coega Vulindlela Accommodation and Conference Centre (VACC)</p>
-            <p className="text-white/80">Gqeberha, Eastern Cape, South Africa</p>
-          </div>
+ 
         </div>
       </main>
       
