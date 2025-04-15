@@ -4,6 +4,9 @@ import CountdownTimer from "@/components/CountdownTimer";
 import ConferenceProgram from "@/components/ConferenceProgram";
 import KeySpeakers from "@/components/KeySpeakers";
 import Sponsors from "@/components/Sponsors";
+import Prospectus from "@/components/Prospectus";
+import Exhibitors from "@/components/Exhibitors";
+import SponsorshipRegistration from "@/components/SponsorshipRegistration";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const Index = () => {
@@ -76,6 +79,47 @@ const Index = () => {
             </button>
           </div>
           
+          {/* About Section - Enhanced */}
+          <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-6 mb-12 border border-white border-opacity-20 animate-fade-in">
+            <h2 className="text-2xl font-heading font-bold text-cbrta-gold mb-6">About the Conference</h2>
+            <div className="space-y-6 text-white/90">
+              <p className="leading-relaxed">
+                The Cross-Border Road Transport Agency (C-BRTA) proudly presents its flagship MSME Conference 2025, 
+                a transformative two-day event designed to catalyze growth and innovation in the cross-border transport sector.
+              </p>
+              
+              <div className="grid md:grid-cols-2 gap-6 mt-6">
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold text-cbrta-gold">Conference Objectives</h3>
+                  <ul className="list-disc list-inside space-y-2 text-white/80 ml-4">
+                    <li>Foster collaboration between MSMEs and industry stakeholders</li>
+                    <li>Showcase innovative solutions in cross-border transport</li>
+                    <li>Facilitate access to funding and growth opportunities</li>
+                    <li>Address regulatory challenges and compliance requirements</li>
+                    <li>Promote sustainable business practices</li>
+                  </ul>
+                </div>
+                
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold text-cbrta-gold">Who Should Attend?</h3>
+                  <ul className="list-disc list-inside space-y-2 text-white/80 ml-4">
+                    <li>MSME owners and entrepreneurs</li>
+                    <li>Transport operators and logistics providers</li>
+                    <li>Industry regulators and policymakers</li>
+                    <li>Technology solution providers</li>
+                    <li>Financial institutions and investors</li>
+                    <li>Business development service providers</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <p className="mt-6 text-white/80">
+                Join us in Gqeberha for this landmark event that brings together industry leaders, innovators, 
+                and stakeholders to shape the future of cross-border transport in Southern Africa.
+              </p>
+            </div>
+          </div>
+          
           {/* Key Speakers */}
           <section className="mb-12 animate-fade-in" style={{animationDelay: "0.28s"}}>
             <KeySpeakers />
@@ -86,8 +130,21 @@ const Index = () => {
             <ConferenceProgram />
           </section>
           
+          {/* New Sections */}
+          <section className="mb-12 animate-fade-in" style={{animationDelay: "0.32s"}}>
+            <Prospectus />
+          </section>
+          
+          <section className="mb-12 animate-fade-in" style={{animationDelay: "0.34s"}}>
+            <Exhibitors />
+          </section>
+          
+          <section className="mb-12 animate-fade-in" style={{animationDelay: "0.36s"}}>
+            <SponsorshipRegistration />
+          </section>
+          
           {/* Sponsors */}
-          <section className="mb-12 animate-fade-in" style={{animationDelay: "0.33s"}}>
+          <section className="mb-12 animate-fade-in" style={{animationDelay: "0.38s"}}>
             <Sponsors />
           </section>
           
@@ -96,31 +153,6 @@ const Index = () => {
             <h3 className="text-xl font-heading font-semibold text-cbrta-gold mb-3">Venue</h3>
             <p className="text-white mb-2 font-medium">Coega Vulindlela Accommodation and Conference Centre (VACC)</p>
             <p className="text-white/80">Gqeberha, Eastern Cape, South Africa</p>
-          </div>
-          
-          {/* Conference Description */}
-          <div className="space-y-6 text-white/90 animate-fade-in" style={{animationDelay: "0.5s"}}>
-            <p>
-              The Cross-Border Road Transport Agency (C-BRTA) is proud to host this conference aimed at fostering collaboration 
-              and innovation among industry players, policymakers, and stakeholders in the cross-border transport sector.
-            </p>
-            
-            <p>
-              The event will address the unique challenges MSMEs face in cross-border road transport, including regulatory 
-              complexities, access to finance, infrastructure limitations, and technological advancements.
-            </p>
-            
-            <p>
-              Through insightful discussions, case studies, workshops, and networking opportunities, the conference will provide 
-              a comprehensive understanding of how MSMEs can adapt to evolving market demands, enhance operational efficiency, 
-              and navigate the complexities of cross-border trade.
-            </p>
-            
-            <p>
-              By empowering these enterprises, C-BRTA aims to create an inclusive, sustainable, and more efficient transport 
-              ecosystem that will benefit small businesses, the entire cross-border road transport industry, and the broader 
-              regional economy.
-            </p>
           </div>
         </div>
       </main>
