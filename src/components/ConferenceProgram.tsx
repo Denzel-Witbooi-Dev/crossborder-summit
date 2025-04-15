@@ -13,7 +13,7 @@ const ConferenceProgram = () => {
 
   const handleDownload = () => {
     // In a real application, this would be the URL to the actual PDF
-    const pdfUrl = "/program.pdf";
+    const pdfUrl = "https://extranet.coega.co.za/files/2025/Presidential_Visit/Brochure.pdf";
     
     // Create a temporary anchor element
     const link = document.createElement("a");
@@ -28,7 +28,7 @@ const ConferenceProgram = () => {
     document.body.removeChild(link);
     
     // For demo purposes, show an alert
-    alert("In a real application, this would download the conference program PDF. Currently this is a placeholder.");
+    // alert("In a real application, this would download the conference program PDF. Currently this is a placeholder.");
   };
 
   return (

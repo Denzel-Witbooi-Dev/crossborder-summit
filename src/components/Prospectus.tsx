@@ -5,8 +5,23 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 const Prospectus = () => {
   const handleDownload = () => {
+       // In a real application, this would be the URL to the actual PDF
+       const pdfUrl = "https://extranet.coega.co.za/files/2025/Presidential_Visit/Brochure.pdf";
+    
+       // Create a temporary anchor element
+       const link = document.createElement("a");
+       link.href = pdfUrl;
+       link.download = "CBRTA_MSME_Conference_Program.pdf";
+       
+       // Temporarily add the link to the document and trigger download
+       document.body.appendChild(link);
+       link.click();
+       
+       // Clean up
+       document.body.removeChild(link);
+       
     // In a real application, this would download the actual prospectus PDF
-    alert("In a real application, this would download the conference prospectus. Currently this is a placeholder.");
+    // alert("In a real application, this would download the conference prospectus. Currently this is a placeholder.");
   };
 
   return (
