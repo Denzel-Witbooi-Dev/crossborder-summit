@@ -1,6 +1,15 @@
 
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Award, Medal, Trophy, Badge } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { cn } from "@/lib/utils";
+import { Separator } from "@/components/ui/separator";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 type SponsorTier = "platinum" | "gold" | "silver" | "bronze";
 
@@ -11,119 +20,86 @@ type Sponsor = {
   websiteUrl?: string;
 };
 
-const sponsors: Sponsor[] = [
-  {
-    name: "Transport Development Bank",
-    tier: "platinum",
-    logoUrl: "/placeholder.svg",
-    websiteUrl: "#"
-  },
-  {
-    name: "African Trade Commission",
-    tier: "gold",
-    logoUrl: "/placeholder.svg",
-    websiteUrl: "#"
-  },
-  {
-    name: "Southern African Logistics Association",
-    tier: "gold",
-    logoUrl: "/placeholder.svg",
-    websiteUrl: "#"
-  },
-  {
-    name: "Continental Freight Services",
-    tier: "silver",
-    logoUrl: "/placeholder.svg",
-    websiteUrl: "#"
-  },
-  {
-    name: "Eastern Cape Development Corporation",
-    tier: "silver",
-    logoUrl: "/placeholder.svg",
-    websiteUrl: "#"
-  },
-  {
-    name: "Logistics Innovation Hub",
-    tier: "bronze",
-    logoUrl: "/placeholder.svg",
-    websiteUrl: "#"
-  }
-];
+const sponsors: Sponsor[] = // ... keep existing code (sponsors array)
 
-const tierColors: Record<SponsorTier, string> = {
-  platinum: "bg-white/20 border-white",
-  gold: "bg-cbrta-gold/10 border-cbrta-gold",
-  silver: "bg-gray-300/10 border-gray-300",
-  bronze: "bg-amber-700/10 border-amber-700/50"
+const tierInfo: Record<SponsorTier, { icon: React.ReactNode; description: string }> = {
+  platinum: {
+    icon: <Trophy className="w-6 h-6 text-white" />,
+    description: "Our premier partners driving innovation in cross-border transport"
+  },
+  gold: {
+    icon: <Award className="w-6 h-6 text-cbrta-gold" />,
+    description: "Key contributors to sustainable transport solutions"
+  },
+  silver: {
+    icon: <Medal className="w-6 h-6 text-gray-300" />,
+    description: "Valued supporters of regional transport development"
+  },
+  bronze: {
+    icon: <Badge className="w-6 h-6 text-amber-700" />,
+    description: "Essential partners in our transport ecosystem"
+  }
 };
 
-const Sponsors = () => {
+const tierColors: Record<SponsorTier, string> = {
+  platinum: "bg-gradient-to-br from-white/20 to-white/10 border-white/40 hover:border-white",
+  gold: "bg-gradient-to-br from-cbrta-gold/20 to-cbrta-gold/5 border-cbrta-gold/40 hover:border-cbrta-gold",
+  silver: "bg-gradient-to-br from-gray-300/20 to-gray-300/5 border-gray-300/40 hover:border-gray-300",
+  bronze: "bg-gradient-to-br from-amber-700/20 to-amber-700/5 border-amber-700/40 hover:border-amber-700"
+};
+
+const TierSection = ({ 
+  tier, 
+  sponsors, 
+  large = false, 
+  small = false 
+}: { 
+  tier: SponsorTier; 
+  sponsors: Sponsor[]; 
+  large?: boolean; 
+  small?: boolean;
+}) => {
   const isMobile = useIsMobile();
-  const platinumSponsors = sponsors.filter(s => s.tier === "platinum");
-  const goldSponsors = sponsors.filter(s => s.tier === "gold");
-  const silverSponsors = sponsors.filter(s => s.tier === "silver");
-  const bronzeSponsors = sponsors.filter(s => s.tier === "bronze");
   
+  if (sponsors.length === 0) return null;
+
   return (
-    <section className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-6 mb-8 border border-white border-opacity-20 animate-fade-in">
-      <h2 className="text-2xl font-heading font-bold text-cbrta-gold mb-6">Our Sponsors</h2>
-      
-      {platinumSponsors.length > 0 && (
-        <div className="mb-8">
-          <h3 className="text-lg font-semibold text-white mb-4">Platinum Partners</h3>
-          <div className="flex flex-wrap justify-center gap-6">
-            {platinumSponsors.map((sponsor, index) => (
-              <SponsorCard key={index} sponsor={sponsor} large={true} />
-            ))}
-          </div>
+    <div className="mb-12 last:mb-0">
+      <div className="flex items-center gap-3 mb-4">
+        {tierInfo[tier].icon}
+        <div>
+          <h3 className="text-lg font-semibold text-white">{tier.charAt(0).toUpperCase() + tier.slice(1)} Partners</h3>
+          <p className="text-sm text-white/70">{tierInfo[tier].description}</p>
         </div>
-      )}
-      
-      {goldSponsors.length > 0 && (
-        <div className="mb-8">
-          <h3 className="text-lg font-semibold text-white mb-4">Gold Sponsors</h3>
-          <div className="flex flex-wrap justify-center gap-6">
-            {goldSponsors.map((sponsor, index) => (
-              <SponsorCard key={index} sponsor={sponsor} large={false} />
-            ))}
-          </div>
-        </div>
-      )}
-      
-      {silverSponsors.length > 0 && (
-        <div className="mb-8">
-          <h3 className="text-lg font-semibold text-white mb-4">Silver Sponsors</h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            {silverSponsors.map((sponsor, index) => (
-              <SponsorCard key={index} sponsor={sponsor} small={true} />
-            ))}
-          </div>
-        </div>
-      )}
-      
-      {bronzeSponsors.length > 0 && (
-        <div className="mb-8">
-          <h3 className="text-lg font-semibold text-white mb-4">Bronze Sponsors</h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            {bronzeSponsors.map((sponsor, index) => (
-              <SponsorCard key={index} sponsor={sponsor} small={true} />
-            ))}
-          </div>
-        </div>
-      )}
-      
-      <div className="text-center mt-8">
-        <p className="text-white/80 mb-4">
-          Interested in becoming a sponsor for this event?
-        </p>
-        <button 
-          className="bg-cbrta-lightblue hover:bg-cbrta-blue text-white font-medium py-2 px-6 rounded-full shadow-md transition-colors"
-          onClick={() => alert("Sponsorship packages information will be available soon. Contact us for early opportunities!")}
-        >
-          Sponsorship Opportunities
-        </button>
       </div>
-    </section>
+      
+      <Separator className="mb-6 bg-white/10" />
+
+      <Carousel
+        opts={{
+          align: "start",
+          loop: sponsors.length > 3,
+        }}
+        className="w-full"
+      >
+        <CarouselContent className="-ml-4">
+          {sponsors.map((sponsor, index) => (
+            <CarouselItem key={index} className={cn(
+              "pl-4",
+              small ? "basis-1/2 md:basis-1/4" : large ? "basis-full md:basis-1/2" : "basis-2/3 md:basis-1/3"
+            )}>
+              <SponsorCard sponsor={sponsor} large={large} small={small} />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        {sponsors.length > (isMobile ? 2 : 3) && (
+          <>
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
+          </>
+        )}
+      </Carousel>
+    </div>
   );
 };
 
@@ -137,27 +113,29 @@ const SponsorCard = ({
   small?: boolean; 
 }) => {
   const sizeClasses = large 
-    ? "w-64 h-32" 
+    ? "min-h-[200px]" 
     : small 
-      ? "w-36 h-24" 
-      : "w-48 h-28";
+      ? "min-h-[140px]" 
+      : "min-h-[160px]";
       
   return (
     <a 
       href={sponsor.websiteUrl || "#"} 
       target="_blank" 
       rel="noopener noreferrer"
-      className={`
-        ${sizeClasses} rounded-lg ${tierColors[sponsor.tier]} border p-3
-        flex flex-col items-center justify-center gap-2
-        hover:shadow-md transition-all hover:scale-105
-      `}
+      className={cn(
+        `${sizeClasses} rounded-lg ${tierColors[sponsor.tier]} border p-4
+        flex flex-col items-center justify-between gap-3
+        transform transition-all duration-300
+        hover:shadow-lg hover:shadow-white/5 hover:-translate-y-1
+        group backdrop-blur-sm`,
+      )}
     >
       <div className="flex-1 flex items-center justify-center w-full p-2">
         <img 
           src={sponsor.logoUrl} 
           alt={`${sponsor.name} logo`} 
-          className="max-w-full max-h-full object-contain" 
+          className="max-w-full max-h-full object-contain filter group-hover:brightness-110 transition-all duration-300" 
           onError={(e) => {
             const target = e.target as HTMLImageElement;
             target.src = '/placeholder.svg';
@@ -165,13 +143,13 @@ const SponsorCard = ({
           }}
         />
       </div>
-      <div className="text-center">
-        <p className="text-white text-sm font-medium truncate w-full">
+      <div className="text-center w-full">
+        <p className="text-white text-sm font-medium truncate">
           {sponsor.name}
         </p>
         {sponsor.websiteUrl && (
-          <div className="flex items-center justify-center text-cbrta-gold/80 text-xs mt-1">
-            Visit <ExternalLink size={10} className="ml-1" />
+          <div className="flex items-center justify-center text-cbrta-gold/80 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">
+            Visit website <ExternalLink size={10} className="ml-1" />
           </div>
         )}
       </div>
@@ -179,5 +157,36 @@ const SponsorCard = ({
   );
 };
 
-export default Sponsors;
+const Sponsors = () => {
+  const platinumSponsors = sponsors.filter(s => s.tier === "platinum");
+  const goldSponsors = sponsors.filter(s => s.tier === "gold");
+  const silverSponsors = sponsors.filter(s => s.tier === "silver");
+  const bronzeSponsors = sponsors.filter(s => s.tier === "bronze");
+  
+  return (
+    <section className="bg-gradient-to-br from-white/10 to-transparent backdrop-blur-md rounded-lg p-6 mb-8 border border-white/20 animate-fade-in">
+      <h2 className="text-2xl font-heading font-bold text-cbrta-gold mb-8">Our Sponsors</h2>
+      
+      <div className="space-y-8">
+        <TierSection tier="platinum" sponsors={platinumSponsors} large={true} />
+        <TierSection tier="gold" sponsors={goldSponsors} />
+        <TierSection tier="silver" sponsors={silverSponsors} small={true} />
+        <TierSection tier="bronze" sponsors={bronzeSponsors} small={true} />
+      </div>
+      
+      <div className="text-center mt-12 pt-8 border-t border-white/10">
+        <p className="text-white/80 mb-4">
+          Join our community of industry leaders shaping the future of cross-border transport
+        </p>
+        <button 
+          onClick={() => window.location.href = '#sponsorship-registration'}
+          className="bg-gradient-to-r from-cbrta-lightblue to-cbrta-blue hover:from-cbrta-blue hover:to-cbrta-lightblue text-white font-medium py-2 px-6 rounded-full shadow-md transition-all duration-300 hover:shadow-lg hover:shadow-cbrta-blue/20"
+        >
+          Become a Sponsor
+        </button>
+      </div>
+    </section>
+  );
+};
 
+export default Sponsors;
