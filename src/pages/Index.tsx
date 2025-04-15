@@ -1,4 +1,3 @@
-
 import { MapPin, Calendar, Clock } from "lucide-react";
 import CountdownTimer from "@/components/CountdownTimer";
 import ConferenceProgram from "@/components/ConferenceProgram";
@@ -8,22 +7,23 @@ import Prospectus from "@/components/Prospectus";
 import Exhibitors from "@/components/Exhibitors";
 import SponsorshipRegistration from "@/components/SponsorshipRegistration";
 import { useIsMobile } from "@/hooks/use-mobile";
+import Navigation from "@/components/NavigationMenu";
 
 const Index = () => {
-  // Set conference date: June 26, 2025
   const conferenceDate = new Date("2025-06-26T09:00:00+02:00");
   const isMobile = useIsMobile();
   
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-cbrta-blue to-cbrta-darkgray">
-      {/* Header with Logo */}
+      {/* Header with Logo and Navigation */}
       <header className="container mx-auto pt-6 px-4">
-        <div className="flex justify-center md:justify-start">
+        <div className="flex justify-between items-center">
           <img 
             src="/lovable-uploads/cd69fd35-2767-47fc-a3f6-3a011e3b3975.png" 
             alt="C-BRTA Logo" 
             className="h-16 md:h-20 w-auto"
           />
+          <Navigation />
         </div>
       </header>
       
@@ -79,8 +79,8 @@ const Index = () => {
             </button>
           </div>
           
-          {/* About Section - Enhanced */}
-          <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-6 mb-12 border border-white border-opacity-20 animate-fade-in">
+          {/* About Section */}
+          <div id="about" className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-6 mb-12 border border-white border-opacity-20 animate-fade-in">
             <h2 className="text-2xl font-heading font-bold text-cbrta-gold mb-6">About the Conference</h2>
             <div className="space-y-6 text-white/90">
               <p className="leading-relaxed">
@@ -121,7 +121,7 @@ const Index = () => {
           </div>
           
           {/* Key Speakers */}
-          <section className="mb-12 animate-fade-in" style={{animationDelay: "0.28s"}}>
+          <section id="speakers" className="mb-12 animate-fade-in" style={{animationDelay: "0.28s"}}>
             <KeySpeakers />
           </section>
           
@@ -130,21 +130,23 @@ const Index = () => {
             <ConferenceProgram />
           </section>
           
-          {/* New Sections */}
-          <section className="mb-12 animate-fade-in" style={{animationDelay: "0.32s"}}>
+          {/* Prospectus */}
+          <section id="prospectus" className="mb-12 animate-fade-in" style={{animationDelay: "0.32s"}}>
             <Prospectus />
           </section>
           
-          <section className="mb-12 animate-fade-in" style={{animationDelay: "0.34s"}}>
+          {/* Exhibitors */}
+          <section id="exhibitors" className="mb-12 animate-fade-in" style={{animationDelay: "0.34s"}}>
             <Exhibitors />
           </section>
           
+          {/* Sponsorship Registration */}
           <section className="mb-12 animate-fade-in" style={{animationDelay: "0.36s"}}>
             <SponsorshipRegistration />
           </section>
           
           {/* Sponsors */}
-          <section className="mb-12 animate-fade-in" style={{animationDelay: "0.38s"}}>
+          <section id="sponsors" className="mb-12 animate-fade-in" style={{animationDelay: "0.38s"}}>
             <Sponsors />
           </section>
           
