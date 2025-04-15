@@ -142,7 +142,7 @@ const ConferenceProgram = () => {
                   </Table>
                 </div>
                 
-                <div className="mt-8">
+                {/* <div className="mt-8">
                   <h3 className="text-lg font-semibold text-cbrta-gold mb-4">Breakaway Sessions</h3>
                   <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1" className="border-cbrta-blue/20">
@@ -190,7 +190,7 @@ const ConferenceProgram = () => {
                       </AccordionContent>
                     </AccordionItem>
                   </Accordion>
-                </div>
+                </div> */}
               </CardContent>
             </Card>
           </TabsContent>
