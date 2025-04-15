@@ -2,7 +2,7 @@
 import { BadgeDollarSign } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TierSection } from "./sponsors/TierSection";
-import { sponsors, SponsorTier } from "@/types/sponsor";
+import { sponsors, SponsorTier, Sponsor } from "@/types/sponsor";
 
 const Sponsors = () => {
   const sponsorsByTier = {
