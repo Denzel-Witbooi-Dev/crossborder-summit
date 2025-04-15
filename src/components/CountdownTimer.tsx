@@ -49,27 +49,29 @@ const CountdownTimer = ({ targetDate, timezone = "Africa/Johannesburg" }: Countd
   );
 
   return (
-    <div className="w-full">
-      <div className="grid grid-cols-4 gap-4 md:gap-6 text-center">
-        <div className="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-4 md:p-6 shadow-lg border border-white border-opacity-30">
-          <div className="text-3xl md:text-5xl font-bold text-white">{formatTime(timeLeft.days)}</div>
-          <div className="text-sm md:text-base uppercase tracking-wider text-white mt-2">Days</div>
+    <div className="w-full max-w-4xl mx-auto">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 md:gap-6">
+        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 md:p-6 border border-white/20">
+          <div className="text-2xl sm:text-3xl md:text-5xl font-bold text-white">{formatTime(timeLeft.days)}</div>
+          <div className="text-xs sm:text-sm md:text-base uppercase tracking-wider text-white/80 mt-1 md:mt-2">Days</div>
         </div>
-        <div className="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-4 md:p-6 shadow-lg border border-white border-opacity-30">
-          <div className="text-3xl md:text-5xl font-bold text-white">{formatTime(timeLeft.hours)}</div>
-          <div className="text-sm md:text-base uppercase tracking-wider text-white mt-2">Hours</div>
+        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 md:p-6 border border-white/20">
+          <div className="text-2xl sm:text-3xl md:text-5xl font-bold text-white">{formatTime(timeLeft.hours)}</div>
+          <div className="text-xs sm:text-sm md:text-base uppercase tracking-wider text-white/80 mt-1 md:mt-2">Hours</div>
         </div>
-        <div className="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-4 md:p-6 shadow-lg border border-white border-opacity-30">
-          <div className="text-3xl md:text-5xl font-bold text-white">{formatTime(timeLeft.minutes)}</div>
-          <div className="text-sm md:text-base uppercase tracking-wider text-white mt-2">Minutes</div>
+        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 md:p-6 border border-white/20">
+          <div className="text-2xl sm:text-3xl md:text-5xl font-bold text-white">{formatTime(timeLeft.minutes)}</div>
+          <div className="text-xs sm:text-sm md:text-base uppercase tracking-wider text-white/80 mt-1 md:mt-2">Minutes</div>
         </div>
-        <div className="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-4 md:p-6 shadow-lg border border-white border-opacity-30">
-          <div className="text-3xl md:text-5xl font-bold text-white">{formatTime(timeLeft.seconds)}</div>
-          <div className="text-sm md:text-base uppercase tracking-wider text-white mt-2">Seconds</div>
+        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 md:p-6 border border-white/20">
+          <div className="text-2xl sm:text-3xl md:text-5xl font-bold text-white">{formatTime(timeLeft.seconds)}</div>
+          <div className="text-xs sm:text-sm md:text-base uppercase tracking-wider text-white/80 mt-1 md:mt-2">Seconds</div>
         </div>
       </div>
-      <div className="text-center mt-6 text-white text-lg">
-        Until {formattedDate}
+      <div className="text-center mt-4 md:mt-6">
+        <p className="text-sm sm:text-base md:text-lg text-white/90 px-4">
+          Until {formattedDate}
+        </p>
       </div>
     </div>
   );
