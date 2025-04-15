@@ -30,37 +30,50 @@ const Index = () => {
       {/* Main Content */}
       <main className="container mx-auto flex-grow px-4 py-8 md:py-12">
         <div className="max-w-5xl mx-auto">
-          {/* Conference Title */}
-          <div className="text-center mb-8 md:mb-12 animate-fade-in">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white font-heading mb-4">
-              C-BRTA MSME Conference 2025
-            </h1>
-            
-            {/* Event Details (Date, Venue) */}
-            <div className="flex flex-col md:flex-row justify-center items-center gap-4 text-white mb-6">
-              <div className="flex items-center gap-2">
-                <Calendar className="h-5 w-5 text-cbrta-gold" />
-                <span>June 26-27, 2025</span>
+          {/* Hero Section with Background Image */}
+          <div 
+            className="relative rounded-xl overflow-hidden mb-12"
+            style={{
+              backgroundImage: "url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2000&q=80')",
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-cbrta-blue/90 to-cbrta-darkgray/90" />
+            <div className="relative p-8 md:p-12">
+              {/* Conference Title */}
+              <div className="text-center mb-8 md:mb-12 animate-fade-in">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white font-heading mb-4">
+                  C-BRTA MSME Conference 2025
+                </h1>
+                
+                {/* Event Details (Date, Venue) */}
+                <div className="flex flex-col md:flex-row justify-center items-center gap-4 text-white mb-6">
+                  <div className="flex items-center gap-2">
+                    <Calendar className="h-5 w-5 text-cbrta-gold" />
+                    <span>June 26-27, 2025</span>
+                  </div>
+                  <div className="hidden md:block text-cbrta-gold">•</div>
+                  <div className="flex items-center gap-2">
+                    <Clock className="h-5 w-5 text-cbrta-gold" />
+                    <span>09:00 AM - 05:00 PM</span>
+                  </div>
+                  <div className="hidden md:block text-cbrta-gold">•</div>
+                  <div className="flex items-center gap-2">
+                    <MapPin className="h-5 w-5 text-cbrta-gold" />
+                    <span>Gqeberha, Eastern Cape</span>
+                  </div>
+                </div>
+                
+                {/* Theme */}
+                <div className="bg-gradient-to-r from-cbrta-blue/80 via-cbrta-lightblue/80 to-cbrta-blue/80 p-4 rounded-lg backdrop-blur-sm mb-8 border border-white/10">
+                  <h2 className="text-xl md:text-2xl font-heading text-white">
+                    <span className="text-cbrta-gold">"</span>
+                    Unlocking the Potential of MSMEs: Driving Innovation, Growth, and Resilience
+                    <span className="text-cbrta-gold">"</span>
+                  </h2>
+                </div>
               </div>
-              <div className="hidden md:block text-cbrta-gold">•</div>
-              <div className="flex items-center gap-2">
-                <Clock className="h-5 w-5 text-cbrta-gold" />
-                <span>09:00 AM - 05:00 PM</span>
-              </div>
-              <div className="hidden md:block text-cbrta-gold">•</div>
-              <div className="flex items-center gap-2">
-                <MapPin className="h-5 w-5 text-cbrta-gold" />
-                <span>Gqeberha, Eastern Cape</span>
-              </div>
-            </div>
-            
-            {/* Theme */}
-            <div className="bg-gradient-to-r from-cbrta-blue via-cbrta-lightblue to-cbrta-blue p-4 rounded-lg shadow-lg border border-cbrta-lightblue mb-8">
-              <h2 className="text-xl md:text-2xl font-heading text-white">
-                <span className="text-cbrta-gold">&ldquo;</span>
-                Unlocking the Potential of MSMEs: Driving Innovation, Growth, and Resilience
-                <span className="text-cbrta-gold">&rdquo;</span>
-              </h2>
             </div>
           </div>
           
@@ -78,52 +91,69 @@ const Index = () => {
               Register Interest
             </button>
           </div>
-          {/* Venue Details */}
-          <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-6 mb-8 border border-white border-opacity-20 animate-fade-in" style={{animationDelay: "0.4s"}}>
-            <h3 className="text-xl font-heading font-semibold text-cbrta-gold mb-3">Venue</h3>
-            <p className="text-white mb-2 font-medium">Coega Vulindlela Accommodation and Conference Centre (VACC)</p>
-            <p className="text-white/80">Gqeberha, Eastern Cape, South Africa</p>
+
+          {/* Venue Details with Image */}
+          <div className="grid md:grid-cols-2 gap-6 mb-12">
+            <div 
+              className="h-64 md:h-full rounded-lg bg-center bg-cover"
+              style={{
+                backgroundImage: "url('https://images.unsplash.com/photo-1527576539890-dfa815648363?auto=format&fit=crop&w=1000&q=80')",
+              }}
+            />
+            <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-6 border border-white border-opacity-20 animate-fade-in flex flex-col justify-center">
+              <h3 className="text-xl font-heading font-semibold text-cbrta-gold mb-3">Venue</h3>
+              <p className="text-white mb-2 font-medium">Coega Vulindlela Accommodation and Conference Centre (VACC)</p>
+              <p className="text-white/80">Gqeberha, Eastern Cape, South Africa</p>
+            </div>
           </div>
 
-          {/* About Section */}
-          <div id="about" className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-6 mb-12 border border-white border-opacity-20 animate-fade-in">
-            <h2 className="text-2xl font-heading font-bold text-cbrta-gold mb-6">About the Conference</h2>
-            <div className="space-y-6 text-white/90">
-              <p className="leading-relaxed">
-                The Cross-Border Road Transport Agency (C-BRTA) proudly presents its flagship MSME Conference 2025, 
-                a transformative two-day event designed to catalyze growth and innovation in the cross-border transport sector.
-              </p>
-              
-              <div className="grid md:grid-cols-2 gap-6 mt-6">
-                <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-cbrta-gold">Conference Objectives</h3>
-                  <ul className="list-disc list-inside space-y-2 text-white/80 ml-4">
-                    <li>Foster collaboration between MSMEs and industry stakeholders</li>
-                    <li>Showcase innovative solutions in cross-border transport</li>
-                    <li>Facilitate access to funding and growth opportunities</li>
-                    <li>Address regulatory challenges and compliance requirements</li>
-                    <li>Promote sustainable business practices</li>
-                  </ul>
+          {/* About Section with Image */}
+          <div id="about" className="grid md:grid-cols-2 gap-6 mb-12">
+            <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-6 border border-white border-opacity-20 animate-fade-in order-2 md:order-1">
+              <h2 className="text-2xl font-heading font-bold text-cbrta-gold mb-6">About the Conference</h2>
+              <div className="space-y-6 text-white/90">
+                <p className="leading-relaxed">
+                  The Cross-Border Road Transport Agency (C-BRTA) proudly presents its flagship MSME Conference 2025, 
+                  a transformative two-day event designed to catalyze growth and innovation in the cross-border transport sector.
+                </p>
+                
+                <div className="grid md:grid-cols-2 gap-6 mt-6">
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-semibold text-cbrta-gold">Conference Objectives</h3>
+                    <ul className="list-disc list-inside space-y-2 text-white/80 ml-4">
+                      <li>Foster collaboration between MSMEs and industry stakeholders</li>
+                      <li>Showcase innovative solutions in cross-border transport</li>
+                      <li>Facilitate access to funding and growth opportunities</li>
+                      <li>Address regulatory challenges and compliance requirements</li>
+                      <li>Promote sustainable business practices</li>
+                    </ul>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-semibold text-cbrta-gold">Who Should Attend?</h3>
+                    <ul className="list-disc list-inside space-y-2 text-white/80 ml-4">
+                      <li>MSME owners and entrepreneurs</li>
+                      <li>Transport operators and logistics providers</li>
+                      <li>Industry regulators and policymakers</li>
+                      <li>Technology solution providers</li>
+                      <li>Financial institutions and investors</li>
+                      <li>Business development service providers</li>
+                    </ul>
+                  </div>
                 </div>
                 
-                <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-cbrta-gold">Who Should Attend?</h3>
-                  <ul className="list-disc list-inside space-y-2 text-white/80 ml-4">
-                    <li>MSME owners and entrepreneurs</li>
-                    <li>Transport operators and logistics providers</li>
-                    <li>Industry regulators and policymakers</li>
-                    <li>Technology solution providers</li>
-                    <li>Financial institutions and investors</li>
-                    <li>Business development service providers</li>
-                  </ul>
-                </div>
+                <p className="mt-6 text-white/80">
+                  Join us in Gqeberha for this landmark event that brings together industry leaders, innovators, 
+                  and stakeholders to shape the future of cross-border transport in Southern Africa.
+                </p>
               </div>
-              
-              <p className="mt-6 text-white/80">
-                Join us in Gqeberha for this landmark event that brings together industry leaders, innovators, 
-                and stakeholders to shape the future of cross-border transport in Southern Africa.
-              </p>
             </div>
+            <div 
+              className="h-64 md:h-full rounded-lg bg-center bg-cover order-1 md:order-2"
+              style={{
+                backgroundImage: "url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1000&q=80')",
+              }}
+            />
           </div>
 
           {/* Prospectus */}
@@ -157,7 +187,6 @@ const Index = () => {
             <Sponsors />
           </section>
           
- 
         </div>
       </main>
       
