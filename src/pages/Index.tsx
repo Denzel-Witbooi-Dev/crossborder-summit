@@ -108,7 +108,7 @@ const Index = () => {
             </p>
           </div>
         </div>
-      </main>
+    
 
           {/* Key Speakers */}
           <section className="mb-12 animate-fade-in" style={{animationDelay: "0.28s"}}>
@@ -127,7 +127,7 @@ const Index = () => {
           
 
           
-
+          </main>
       
       {/* Footer */}
       <footer className="bg-cbrta-darkgray py-6">
