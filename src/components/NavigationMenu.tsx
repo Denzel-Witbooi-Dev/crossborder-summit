@@ -1,11 +1,33 @@
 
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu"
 import { cn } from "@/lib/utils"
-import { Menu } from "lucide-react"
-import { useState } from "react"
+import { Menu, X } from "lucide-react"
+import { useState, useEffect } from "react"
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsSticky(window.scrollY > 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Lock body scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -16,23 +38,32 @@ const Navigation = () => {
   };
 
   return (
-    <div className="relative z-50">
+    <div className={cn(
+      "z-50 transition-all duration-300",
+      isSticky ? "sticky top-0 bg-cbrta-blue/95 backdrop-blur-sm shadow-lg" : "relative"
+    )}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="md:hidden text-white p-2 hover:bg-white/10 rounded-lg"
+        className="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
+        aria-label={isOpen ? "Close menu" : "Open menu"}
       >
-        <Menu />
+        {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
       </button>
 
       <nav className={cn(
         "md:block",
-        isOpen ? "block absolute top-full left-0 right-0 bg-cbrta-darkgray/95 backdrop-blur-sm p-4 rounded-lg mt-2" : "hidden"
+        isOpen 
+          ? "fixed inset-0 bg-cbrta-darkgray/95 backdrop-blur-md flex items-center justify-center md:relative md:bg-transparent md:backdrop-blur-none" 
+          : "hidden"
       )}>
-        <ul className="flex md:flex-row flex-col gap-6 items-center text-white">
+        <ul className={cn(
+          "flex md:flex-row flex-col gap-8 md:gap-6 items-center text-white text-lg md:text-base",
+          isOpen && "animate-in fade-in duration-300"
+        )}>
           <li>
             <button 
               onClick={() => scrollToSection('about')}
-              className="hover:text-cbrta-gold transition-colors"
+              className="hover:text-cbrta-gold transition-colors p-2"
             >
               About
             </button>
@@ -40,7 +71,7 @@ const Navigation = () => {
           <li>
             <button 
               onClick={() => scrollToSection('speakers')}
-              className="hover:text-cbrta-gold transition-colors"
+              className="hover:text-cbrta-gold transition-colors p-2"
             >
               Speakers
             </button>
@@ -48,7 +79,7 @@ const Navigation = () => {
           <li>
             <button 
               onClick={() => scrollToSection('sponsors')}
-              className="hover:text-cbrta-gold transition-colors"
+              className="hover:text-cbrta-gold transition-colors p-2"
             >
               Sponsors
             </button>
@@ -56,7 +87,7 @@ const Navigation = () => {
           <li>
             <button 
               onClick={() => scrollToSection('exhibitors')}
-              className="hover:text-cbrta-gold transition-colors"
+              className="hover:text-cbrta-gold transition-colors p-2"
             >
               Exhibitors
             </button>
@@ -64,7 +95,7 @@ const Navigation = () => {
           <li>
             <button 
               onClick={() => scrollToSection('prospectus')}
-              className="hover:text-cbrta-gold transition-colors"
+              className="hover:text-cbrta-gold transition-colors p-2"
             >
               Prospectus
             </button>
