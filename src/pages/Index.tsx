@@ -204,11 +204,11 @@ const Index = () => {
             <Exhibitors />
           </section>
 
-          <section>
+          <section id="sponsors">
             <SponsorshipRegistration />
           </section>
 
-          <section id="sponsors">
+          <section>
             <Sponsors />
           </section>
         </div>

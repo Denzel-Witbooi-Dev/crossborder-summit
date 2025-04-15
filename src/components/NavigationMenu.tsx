@@ -47,28 +47,22 @@ const Navigation = () => {
           </li>
           <li>
             <button 
-              onClick={() => scrollToSection('sponsors')}
-              className="hover:text-cbrta-gold transition-colors"
-            >
-              Sponsors
-            </button>
-          </li>
-          <li>
-            <button 
-              onClick={() => scrollToSection('exhibitors')}
-              className="hover:text-cbrta-gold transition-colors"
-            >
-              Exhibitors
-            </button>
-          </li>
-          <li>
-            <button 
               onClick={() => scrollToSection('prospectus')}
               className="hover:text-cbrta-gold transition-colors"
             >
               Prospectus
             </button>
           </li>
+          
+          <li>
+            <button 
+              onClick={() => scrollToSection('sponsors')}
+              className="hover:text-cbrta-gold transition-colors"
+            >
+              Sponsors
+            </button>
+          </li>
+          
         </ul>
       </nav>
     </div>
