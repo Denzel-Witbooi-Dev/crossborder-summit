@@ -36,7 +36,7 @@ const Navigation = () => {
       "z-50 transition-all duration-300 w-full px-4",
       isSticky ? "fixed top-0 bg-cbrta-blue/95 backdrop-blur-sm shadow-lg" : "relative"
     )}>
-      <div className="container mx-auto flex justify-end items-center h-16">
+      <div className="container mx-auto flex justify-between items-center h-16">
         {/* Mobile Menu (Dropdown) */}
         <div className="md:hidden">
           <DropdownMenu>
@@ -48,12 +48,15 @@ const Navigation = () => {
                 <Menu className="w-6 h-6" />
               </button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-48 bg-cbrta-blue/95 backdrop-blur-sm border-cbrta-gold">
+            <DropdownMenuContent 
+              align="start" 
+              className="w-screen mx-4 bg-cbrta-blue/95 backdrop-blur-sm border-cbrta-gold"
+            >
               {menuItems.map((item) => (
                 <DropdownMenuItem
                   key={item.id}
-                  className="text-white hover:text-cbrta-gold focus:text-cbrta-gold cursor-pointer"
-                  onClick={() => scrollToSection(item.id)}
+                  className="text-white hover:text-cbrta-gold focus:text-cbrta-gold cursor-pointer py-3 text-base"
+                  onSelect={() => scrollToSection(item.id)}
                 >
                   {item.label}
                 </DropdownMenuItem>
@@ -63,13 +66,13 @@ const Navigation = () => {
         </div>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:block">
-          <ul className="flex items-center gap-6 text-white text-base">
+        <nav className="hidden md:block w-full">
+          <ul className="flex items-center justify-end gap-6 text-white text-base">
             {menuItems.map((item) => (
               <li key={item.id}>
                 <button 
                   onClick={() => scrollToSection(item.id)}
-                  className="hover:text-cbrta-gold transition-colors p-2"
+                  className="hover:text-cbrta-gold transition-colors p-2 text-sm"
                 >
                   {item.label}
                 </button>

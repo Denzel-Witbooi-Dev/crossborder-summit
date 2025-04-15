@@ -18,11 +18,11 @@ const Index = () => {
       {/* Header with Logo and Navigation */}
       <header className="w-full bg-cbrta-blue">
         <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center py-6">
+          <div className="flex justify-between items-center py-4">
             <img 
               src="/lovable-uploads/cd69fd35-2767-47fc-a3f6-3a011e3b3975.png" 
               alt="C-BRTA Logo" 
-              className="h-16 md:h-20 w-auto"
+              className="h-10 md:h-16 w-auto"
             />
           </div>
         </div>
@@ -34,31 +34,31 @@ const Index = () => {
         <div className="max-w-5xl mx-auto">
           {/* Conference Title */}
           <div className="text-center mb-8 md:mb-12 animate-fade-in">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white font-heading mb-4">
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white font-heading mb-4">
               C-BRTA MSME Conference 2025
             </h1>
             
             {/* Event Details (Date, Venue) */}
-            <div className="flex flex-col md:flex-row justify-center items-center gap-4 text-white mb-6">
+            <div className="flex flex-col md:flex-row justify-center items-center gap-4 text-white mb-6 text-sm md:text-base">
               <div className="flex items-center gap-2">
-                <Calendar className="h-5 w-5 text-cbrta-gold" />
+                <Calendar className="h-4 w-4 md:h-5 md:w-5 text-cbrta-gold" />
                 <span>June 26-27, 2025</span>
               </div>
               <div className="hidden md:block text-cbrta-gold">•</div>
               <div className="flex items-center gap-2">
-                <Clock className="h-5 w-5 text-cbrta-gold" />
+                <Clock className="h-4 w-4 md:h-5 md:w-5 text-cbrta-gold" />
                 <span>09:00 AM - 05:00 PM</span>
               </div>
               <div className="hidden md:block text-cbrta-gold">•</div>
               <div className="flex items-center gap-2">
-                <MapPin className="h-5 w-5 text-cbrta-gold" />
+                <MapPin className="h-4 w-4 md:h-5 md:w-5 text-cbrta-gold" />
                 <span>Gqeberha, Eastern Cape</span>
               </div>
             </div>
             
             {/* Theme */}
             <div className="bg-gradient-to-r from-cbrta-blue via-cbrta-lightblue to-cbrta-blue p-4 rounded-lg shadow-lg border border-cbrta-lightblue mb-8">
-              <h2 className="text-xl md:text-2xl font-heading text-white">
+              <h2 className="text-base md:text-2xl font-heading text-white">
                 <span className="text-cbrta-gold">&ldquo;</span>
                 Unlocking the Potential of MSMEs: Driving Innovation, Growth, and Resilience
                 <span className="text-cbrta-gold">&rdquo;</span>
