@@ -1,4 +1,4 @@
-import { Trophy, Award, Medal, Badge } from "lucide-react";
+import { Trophy, Award, Medal, Badge, BadgeDollarSign } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 import {
@@ -8,6 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Button } from "@/components/ui/button";
 
 type SponsorTier = "platinum" | "gold" | "silver" | "bronze";
 
@@ -97,13 +98,7 @@ const sponsors: Sponsor[] = [
   }
 ];
 
-const TierSection = ({ 
-  tier, 
-  sponsors 
-}: { 
-  tier: SponsorTier; 
-  sponsors: Sponsor[]; 
-}) => {
+const TierSection = ({ tier, sponsors }: { tier: SponsorTier; sponsors: Sponsor[]; }) => {
   const isMobile = useIsMobile();
   
   if (sponsors.length === 0) return null;
@@ -184,9 +179,25 @@ const Sponsors = () => {
     bronze: sponsors.filter(s => s.tier === "bronze")
   };
   
+  const scrollToRegistration = () => {
+    const element = document.querySelector('#sponsorship-registration');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+  
   return (
     <section className="bg-gradient-to-br from-white/10 to-transparent backdrop-blur-md rounded-lg p-6">
-      <h2 className="text-xl font-heading font-semibold text-cbrta-gold mb-6">Our Sponsors</h2>
+      <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
+        <h2 className="text-xl font-heading font-semibold text-cbrta-gold">Our Sponsors</h2>
+        <Button
+          onClick={scrollToRegistration}
+          className="bg-cbrta-gold hover:bg-cbrta-gold/90 text-cbrta-darkgray transition-all duration-300 hover:scale-105"
+        >
+          <BadgeDollarSign className="w-4 h-4 mr-2" />
+          Become a Sponsor
+        </Button>
+      </div>
       
       <div className="space-y-6">
         {(Object.entries(sponsorsByTier) as [SponsorTier, Sponsor[]][]).map(([tier, sponsors]) => (
