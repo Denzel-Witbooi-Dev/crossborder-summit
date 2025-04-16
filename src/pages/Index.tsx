@@ -34,7 +34,7 @@ const Index = () => {
         <div 
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2000&q=80')",
+            backgroundImage: "url('https://extranet.coega.co.za/images/conference/eventpullups.JPG')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed'
@@ -156,7 +156,7 @@ const Index = () => {
             
             <div className="relative aspect-square rounded-2xl overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1000&q=80"
+                src="https://extranet.coega.co.za/images/conference/borderevent.jpeg"
                 alt="Conference"
                 className="object-cover w-full h-full"
               />
@@ -168,7 +168,7 @@ const Index = () => {
           <section className="relative overflow-hidden rounded-2xl">
             <div className="absolute inset-0">
               <img 
-                src="https://images.unsplash.com/photo-1527576539890-dfa815648363?auto=format&fit=crop&w=2000&q=80"
+                src="https://extranet.coega.co.za/images/conference/outside_logo.JPG"
                 alt="Venue"
                 className="w-full h-full object-cover"
               />
